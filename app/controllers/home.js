@@ -21,26 +21,17 @@ router.get('/', function (req, res, next) {
 
     Article.find(function (err, articles) {
       if (err) return next(err);
-
-      console.log(articles);
       Speaker.find(function (err, speakers) {
         if (err) return next(err);
-        console.log(speakers);
         Presentation.find(function (err, presentations) {
           if (err) return next(err);
-          console.log(presentations);
           Sponsor.find(function (err, sponsors) {
             if (err) return next(err);
-            //console.log(sponsors);
             SponsorType.find(function (err, sponsor_types) {
               if (err) return next(err);
-              console.log(sponsor_types);
-              req.app.locals.sponsor_types = sponsor_types;
-              //SponsorType.remove(function(){});  
-              //Article.remove(function(){});  
               return res.render('index', {
-                title: 'FOSS4G',//configurable.title,
-                slogan: 'Buenos Aires 2016',//configurable.slogan,
+                title: configurable.title,
+                slogan: configurable.slogan,
                 articles: articles,
                 speakers: speakers,
                 presentations: presentations,
