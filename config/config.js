@@ -5,6 +5,7 @@ var path = require('path'),
 var config = {
   development: {
     root: rootPath,
+    theme: 'default',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
     locales_path: './config/locales',
     app: {
@@ -16,6 +17,7 @@ var config = {
 
   test: {
     root: rootPath,
+    theme: 'default',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
     locales_path: './config/locales',
     app: {
@@ -27,6 +29,7 @@ var config = {
 
   production: {
     root: rootPath,
+    theme: 'default',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
     locales_path: './config/locales',
     app: {
