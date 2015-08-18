@@ -84,6 +84,8 @@ block content
             i.calendar.icon
             .content
               .header.inverted #{__('Las incripciones serán abiertas el XX/2105. ')}
+              .description
+                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
     .ui.vertical.inverted.stripe.segment#cfp
       .ui.container
         .row
@@ -91,6 +93,10 @@ block content
             i.calendar.icon
             .content
               .header.inverted #{__('El cfp inicia el XX/2105. ')}
+              .description
+                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
 
 
     .ui.vertical.stripe.segment
@@ -113,10 +119,46 @@ block content
       .ui.container
         .row  
           .column
-            .ui.medium.images
-              img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-1.jpg")
-              img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-3.jpg")
-              img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-w.jpg")
+            .ui.items.inverted
+              .item
+                .content
+                  .header
+                    h1.right #{__('Talleres')}
+                  .meta
+                    span.price
+                    span.stay
+                  .description
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                .ui.medium.image
+                  img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-3.jpg")
+              .item
+                .ui.large.image
+                  img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-w.jpg")
+                .content
+                  .header 
+                    h1 #{__('Presentaciones')}
+                  .meta
+                    span.price
+                    span.stay
+                  .description
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+              .item
+                .content
+                  .header
+                    h1 #{__('Comunidad')}
+                  .meta
+                    span.price
+                    span.stay
+                  .description
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                .ui.large.image.right
+                  img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-1.jpg")
+              
 
     .ui.vertical.stripe.segment
       .ui.container
