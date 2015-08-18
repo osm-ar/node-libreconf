@@ -6,11 +6,12 @@ var mongoose = require('mongoose'),
 var PresentationSchema = new Schema({
   title: String,
   subtitle: String,
-  speaker_id: Number,
+  speaker_id: String,
   url: String,
   text: String,
   approved: Boolean,
-  conference: String
+  conference: String,
+  when: { type: Date, default: Date.now },
 });
 
 PresentationSchema.virtual('date')

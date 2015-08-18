@@ -16,9 +16,6 @@ router.get('/', function (req, res, next) {
 
   Configurable.findOne(function (err, configurable) {
     if (err) return next(err);
-    //console.log(configurable);
-    //configurable.remove(function(){});
-
     Article.find(function (err, articles) {
       if (err) return next(err);
       Speaker.find(function (err, speakers) {
@@ -27,6 +24,7 @@ router.get('/', function (req, res, next) {
           if (err) return next(err);
           Sponsor.find(function (err, sponsors) {
             if (err) return next(err);
+
             SponsorType.find(function (err, sponsor_types) {
               if (err) return next(err);
               return res.render('index', {

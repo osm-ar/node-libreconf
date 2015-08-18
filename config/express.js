@@ -54,6 +54,7 @@ module.exports = function(app, config) {
   });
 
   app.use(i18n.init);
+  __ = i18n.__;
   app.locals.__ = i18n.__;
   app.locals.__n = i18n.__n;
   console.log(app.locals.__("Internationalization initialized. Current locale: ") + i18n.getLocale());
@@ -66,7 +67,59 @@ module.exports = function(app, config) {
   });
 
   app.use('/admin', admin({
-      models: [Article, Speaker, Sponsor, SponsorType, Configurable, Presentation],
+      models: [
+        {
+          mongooseModel: Article,
+          name: __('Articulo'), pluralName: __('Articulos'), toString: 'title', fields: {
+            text: { 
+              editor: 'markdown'
+            }
+          }
+        }, 
+        {
+          mongooseModel: Speaker,
+          name: __('Speaker'), pluralName: __('Speakers'), toString: 'lastname', fields: {
+            bio: { 
+              editor: 'markdown'
+            }
+          }
+        }, 
+        {
+          mongooseModel: Sponsor,
+          name: __('Sponsor'), pluralName: __('Sponsors'), toString: 'title', fields: {
+            text: { 
+              editor: 'markdown'
+            }
+          }
+        },
+        {
+          mongooseModel: SponsorType,
+          name: __('Sponsor Type'), pluralName: __('SponsorTypes'), toString: 'title', fields: {
+            text: { 
+              editor: 'markdown'
+            }
+          }
+        },
+        {
+          mongooseModel: Configurable,
+          name: __('Configurable'), pluralName: __('Configurables'), toString: 'title', fields: {
+            slogan: { 
+              editor: 'markdown'
+            }
+          }
+        },
+        {
+          mongooseModel: Presentation,
+          name: __('Presentation'), pluralName: __('Presentations'), toString: 'title', fields: {
+            subtitle: { 
+              editor: 'markdown'
+            },
+            text: { 
+              editor: 'markdown'
+            }
+          }
+        }        
+      ],
       credentials: {
           username: 'geoinquietos',
           password: 'libreconf'
