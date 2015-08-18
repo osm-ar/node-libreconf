@@ -1,3 +1,12 @@
+                                                               
+ ""#      "    #                                           m"" 
+   #    mmm    #mmm    m mm   mmm    mmm    mmm   m mm   mm#mm 
+   #      #    #" "#   #"  " #"  #  #"  "  #" "#  #"  #    #   
+   #      #    #   #   #     #""""  #      #   #  #   #    #   
+   "mm  mm#mm  ##m#"   #     "#mm"  "#mm"  "#m#"  #   #    #   
+                                                               
+### A simple and libre conference CMS 
+
 ## Getting started
 
 ### Install
