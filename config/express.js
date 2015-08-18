@@ -4,17 +4,26 @@ var i18n = require('i18n');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-var formage = require('formage-admin-ij');
+var admin = require('swan-admin'),
+  router = express.Router(),
+  mongoose = require('mongoose'),
+  Configurable = mongoose.model('Configurable'),
+  Article = mongoose.model('Article'),
+  Speaker = mongoose.model('Speaker'),
+  Presentation = mongoose.model('Presentation'),
+  Sponsor = mongoose.model('Sponsor'),
+  SponsorType = mongoose.model('SponsorType');
 
 module.exports = function(app, config) {
   var env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
   
-  app.set('views', config.root + '/app/views');
+  app.set('views', config.root + '/themes/' + config.theme + '/views');
   app.set('view engine', 'jade');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
@@ -23,10 +32,13 @@ module.exports = function(app, config) {
   app.use(bodyParser.urlencoded({
     extended: true
   }));
-  app.use(cookieParser());
-  app.use(compress());
-  app.use(express.static(config.root + '/themes/' + config.theme + '/public'));
+
+  app.use(compress());  
   app.use(methodOverride());
+  
+  app.use(cookieParser());
+
+  app.use(express.static(config.root + '/themes/' + config.theme + '/public'));
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {
@@ -53,9 +65,14 @@ module.exports = function(app, config) {
     next();
   });
 
-
-  var admin = formage.init(app, express, require('../app/models'));
-
+  app.use('/admin', admin({
+      models: [Article, Speaker, Sponsor, SponsorType, Configurable, Presentation],
+      credentials: {
+          username: 'geoinquietos',
+          password: 'libreconf'
+      },
+      sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
+  }));
 
   app.use(function (req, res, next) {
     var err = new Error('Not Found');
