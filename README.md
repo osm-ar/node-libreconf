@@ -1,24 +1,17 @@
-### Steps to start
+## Getting started
 
-Install gulp and yeoman
+### Install
 
 ```shell
-$ npm install -g gulp yo
+$ git clone https://github.com/f3rnando/node-libreconf.git
+$ cd node-libreconf
+$ npm install
 ```
 
-Install the yeoman express generator locally: 
-
-```
-$ npm install generator-express
-```
-
-Start it with gulp
-
-```
+### Run
+```shell
 $ gulp
 ```
-
-
 
 ### MVC
 
