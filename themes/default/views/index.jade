@@ -93,10 +93,10 @@ block content
               .header.inverted #{__('El cfp inicia el XX/2105. ')}
 
 
-    .ui.stripe.quote.segment.inverted
-      .ui.equal.width.stackable.internally.celled.grid.inverted
-        .center.aligned.row
-          .column#donde
+    .ui.vertical.stripe.segment
+      .ui.container
+        .row
+          div#donde
             h1 #{__('Dónde? en el Instituto Geográfico Nacional')}
             h2 #{__('en la Ciudad de Buenos Aires.')}
             #map
@@ -108,6 +108,10 @@ block content
                   id: 'fernando.jbnfnb8i',
                   accessToken: 'pk.eyJ1IjoiZmVybmFuZG8iLCJhIjoib29xOGNfbyJ9.bAxNNENyPazSKDPNTC_8Vw'
               }).addTo(map);
+
+    .ui.vertical.stripe.segment
+      .ui.container
+        .row  
           .column
             .ui.medium.images
               img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-1.jpg")
@@ -117,22 +121,19 @@ block content
     .ui.vertical.stripe.segment
       .ui.container
         .row
+          h1 #{__('Sponsors')}
           each sponsor in sponsors
             .ui.four.wide
               a.ui.wide(href=sponsor.url)
                 img(src=sponsor.ad_url)
     .ui.vertical.stripe.segment
       .ui.text.container
-        h3.ui.header Breaking The Grid, Grabs Your Attention
-        p
-          | Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.
-        a.ui.large.button Read More
-        h4.ui.horizontal.header.divider
-          a(href='#') Case Studies
-        h3.ui.header Did We Tell You About Our Bananas?
-        p
-          | Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
-        a.ui.large.button Im Still Quite Interested
+        each article in articles
+          h3.ui.header #{article.title}
+          p #{article.text}
+          a.ui.large.button #{__('Leer más')]
+          h4.ui.horizontal.header.divider
+            a(href='#') -
     .ui.notinverted.vertical.footer.segment
       .ui.container
         .ui.stackable.notinverted.divided.equal.height.stackable.grid
@@ -151,7 +152,15 @@ block content
               a.item(href='#') #{__('Términos')}
               a.item(href='#') #{__('Temas')}
               a.item(href='#') #{__('Grilla/Horarios')}
-          .seven.wide.column
+          .three.wide.column
+            h4.ui.notinverted.header #{__('Hecho con')}
+            .ui.notinverted.link.list
+              a.item(href='#') #{__('libreconf')}
+            h4.ui.notinverted.header #{__('por')}
+            .ui.notinverted.link.list
+              a.item(href='#') #{__('geoinquietos')}
+              a.item(href='#') #{__('osm-ar')}
+          .four.wide.column
             h4.ui.notinverted.header #{__('Organiza')]
             img.ui.image(src="/img/geoinquietos-isologo-blanco.png")
   script.
