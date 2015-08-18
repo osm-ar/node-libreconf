@@ -9,9 +9,5 @@ files.forEach(function(file) {
     if (name === 'index')
         return;
 
-    var mod = require('./' + name);
-    if (mod.model)
-        module.exports[name] = mod;
-    else
-        module.exports[name] = mongoose.model(name, mod);
+    module.exports[name] = require('./' + name);
 });

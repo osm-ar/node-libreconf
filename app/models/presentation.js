@@ -10,17 +10,7 @@ var PresentationSchema = new Schema({
   url: String,
   text: String,
   approved: Boolean,
-  conference: {
-    id: Number,
-    name: String,
-    year: Number,
-    country: String,
-    address: String
-    //name: "FOSS4G Buenos Aires",
-    //year: 2016,
-    //country: "Argentina",
-    //address: "Cabildo 300, Ciudad Autónoma de Buenos Aires, Argentina",
-  }
+  conference: String
 });
 
 PresentationSchema.virtual('date')
