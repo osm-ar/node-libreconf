@@ -5,7 +5,7 @@ var path = require('path'),
 var config = {
   development: {
     root: rootPath,
-    theme: 'default',
+    theme: 'foss4g-ba-2016',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
     locales_path: './config/locales',
     app: {
