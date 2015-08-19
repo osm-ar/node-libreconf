@@ -1,0 +1,441 @@
+extends layout
+
+block content
+  // Navigation
+  nav.navbar.navbar-default.navbar-fixed-top.bg-light-gray
+    .container
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header
+        button.navbar-toggle(type='button' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand.page-scroll(href='#page-top') panopti.co
+      // Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li.hidden
+            a(href='#page-top')
+          li
+            a.page-scroll(href='#wtf') #{__('(?)')}
+          li.hidden
+            a.page-scroll(href='#D') #{__(':D')}
+          li
+            a.page-scroll(href='#callfor2') #{__('Cf*')}
+          li.hidden
+            a.page-scroll(href='#staff') #{__('Equipo')}
+          li
+            a.page-scroll(href='#contact')
+              i.fa.fa-envelope-o
+      // /.navbar-collapse
+    // /.container-fluid
+  // Header
+  header
+    .container
+      .intro-text
+        .intro-heading
+        .intro-lead-in
+      a.page-scroll.btn.btn-xl.visible-md(href='#callto') #{__('Participar')}
+  // Portfolio Section
+  section#wtf(style="background:white;")
+    .container
+      .row
+        .col-lg-12.text-center
+          h2.section-heading #{__('(?)')}
+          h3.section-subheading.text-muted #{__('panopti.co es una feria hecha con el objetivo de divertirnos observando y exponiendo proyectos, conocernos. Excusas para la cerveza sobran.')}
+      .row
+        .col-md-4.col-sm-6.portfolio-item
+          a.portfolio-link(href='#feria-modal' data-toggle='modal')
+            .portfolio-hover
+              .portfolio-hover-content
+                i.fa.fa-plus.fa-3x
+            img.img-responsive(src='img/feria.jpg' alt='')
+          .portfolio-caption
+            h4 #{__('Feria')}
+            p.text-muted #{__('Exposicion de proyectos y charlas relámpago')}
+        .col-md-4.col-sm-6.portfolio-item
+          a.portfolio-link(href='#talleres-modal' data-toggle='modal')
+            .portfolio-hover
+              .portfolio-hover-content
+                i.fa.fa-plus.fa-3x
+            img.img-responsive(src='img/talleres.jpg' alt='')
+          .portfolio-caption
+            h4 #{__('Talleres')}
+            p.text-muted #{__('donde introducirse de forma práctica en nuevos conceptos')}
+        .col-md-4.col-sm-6.portfolio-item
+          a.portfolio-link(href='#working-area-modal' data-toggle='modal')
+            .portfolio-hover
+              .portfolio-hover-content
+                i.fa.fa-plus.fa-3x
+            img.img-responsive(src='img/working-area.jpg' alt='')
+          .portfolio-caption
+            h4 #{__('Area de trabajo')}
+            p.text-muted #{__('Area con tranquilidad y comodidad para trabajar sin salir del evento.')}
+  // Sponsors
+  aside.clients
+    .container
+      .row
+        h1.text-center #{__('Patrocinadores')}
+        .col-md-3.col-sm-6
+          a(href='#')
+            img.img-responsive.img-centered(src='img/logos/milliwatt.png' alt='')
+        .col-md-3.col-sm-6
+          a(href='#')
+            img.img-responsive.img-centered(src='img/logos/nirat.png' alt='')
+  // Cf Seccion
+  section#callfor2
+    .container
+      .row
+        .col-lg-12.text-center
+          h1 #{__('Llamado a feriantes y propuestas')}
+          p.text-muted #{__('Podés proponer tu proyecto o idea, de eso se trata panopti.co, para ser considerada, esperamos contar con mucho espacio, así que no dudes en intentarlo ;).')}
+          h3 #{__('El formulario para cargar propuestas será habilitado una vez agregado el segundo intercalar a junio.')}
+  // About Section
+  section.hidden#about
+    .container
+      .row
+        .col-lg-12.text-center
+          h2.section-heading #{__('Acerca de nosotros')}
+          p.section-subheading.text-muted "#{__('We are legion. (?)')}"
+      .row.hidden
+        .col-lg-12
+          ul.timeline
+            li
+              .timeline-image
+                img.img-circle.img-responsive(src='img/about/1.jpg' alt='')
+              .timeline-panel
+                .timeline-heading
+                  h4 2009-2011
+                  h4.subheading Our Humble Beginnings
+                .timeline-body
+                  p.text-muted
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+            li.timeline-inverted
+              .timeline-image
+                img.img-circle.img-responsive(src='img/about/2.jpg' alt='')
+              .timeline-panel
+                .timeline-heading
+                  h4 March 2011
+                  h4.subheading An event is Born
+                .timeline-body
+                  p.text-muted
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+            li
+              .timeline-image
+                img.img-circle.img-responsive(src='img/about/3.jpg' alt='')
+              .timeline-panel
+                .timeline-heading
+                  h4 December 2012
+                  h4.subheading Transition to Full Service
+                .timeline-body
+                  p.text-muted
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+            li.timeline-inverted
+              .timeline-image
+                img.img-circle.img-responsive(src='img/about/4.jpg' alt='')
+              .timeline-panel
+                .timeline-heading
+                  h4 July 2014
+                  h4.subheading Phase Two Expansion
+                .timeline-body
+                  p.text-muted
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+            li.timeline-inverted
+              .timeline-image
+                h4
+                  | Be Part
+                  br
+                  | Of Our
+                  br
+                  | Story!
+
+  section#contact
+    .container
+      .row
+        .col-lg-12.text-center
+          h2.section-heading 
+            i.fa.fa-comments-o
+            |  #{__('IRC')}
+          h3.section-subheading.text-muted #{__('#panopti.co @ freenode')}
+          h2.section-heading 
+            i.fa.fa-envelope-o
+            |  #{__('Escribinos')}
+          h3.section-subheading.text-muted #{__('Complete el formulario y nos pondremos en contacto a la brevedad.')}
+      .row
+        .col-lg-12
+          form#contactForm(name='sentMessage' novalidate='' action="/contact")
+            .row
+              .col-md-6
+                .form-group
+                  input#name.form-control(type='text' placeholder=__('Su nombre')+'*' required='' data-validation-required-message=__('Ingrese su nombre')+'.')
+                  p.help-block.text-danger
+                .form-group
+                  input#email.form-control(type='email' placeholder=__('Su email')+'*'  required='' data-validation-required-message=__('Ingrese su email')+'.')
+                  p.help-block.text-danger
+                .form-group
+                  input#phone.form-control(type='tel' placeholder=__('Su teléfono')+'*' required='' data-validation-required-message=__('Ingrese su teléfono')+'.')
+                  p.help-block.text-danger
+              .col-md-6
+                .form-group
+                  textarea#message.form-control(placeholder=__('El mensaje')+'*' required='' data-validation-required-message=__('Ingrese su mensaje')+'.')
+                  p.help-block.text-danger
+              .clearfix
+              .col-lg-12.text-center
+                #success
+                button.btn.btn-xl(type='submit') #{__('Enviar mensaje')}
+  footer
+    .container
+      .row
+        .col-md-4
+          span.copyright Sattellite images by Mapbox
+        .col-md-4
+          ul.list-inline.social-buttons
+            li
+              a(href='#')
+                i.fa.fa-twitter
+            li
+              a(href='#')
+                i.fa.fa-facebook
+            li
+              a(href='#')
+                i.fa.fa-linkedin
+        .col-md-4
+          ul.list-inline.quicklinks
+            li
+              a(href='#') #{__('Política de privacidad')}
+            li
+              a(href='#') #{__('Términos del servicio')}
+  // Portfolio Modals
+  // Use the modals below to showcase details about your portfolio projects!
+  // Portfolio Modal 1
+  #portfolioModal1.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+    .modal-content
+      .close-modal(data-dismiss='modal')
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              // Project Details Go Here
+              h2 Project Name
+              p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+              img.img-responsive(src='img/portfolio/roundicons-free.png' alt='')
+              p
+                | Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!
+              p
+                strong Want these icons in this portfolio item sample?
+                | You can download 60 of them for free, courtesy of
+                a(href='https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc') RoundIcons.com
+                | , or you can purchase the 1500 icon set
+                a(href='https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc') here
+                | .
+              ul.list-inline
+                li Date: July 2014
+                li Client: Round Icons
+                li Category: Graphic Design
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                i.fa.fa-times
+                |  Close Project
+  // Portfolio Modal 2
+  #portfolioModal2.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+    .modal-content
+      .close-modal(data-dismiss='modal')
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              h2 Project Heading
+              p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+              img.img-responsive.img-centered(src='img/portfolio/startup-framework-preview.png' alt='')
+              p
+                a(href='http://designmodo.com/startup/?u=787') Startup Framework
+                |  is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.
+              p
+                | You can preview Startup Framework
+                a(href='http://designmodo.com/startup/?u=787') here
+                | .
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                i.fa.fa-times
+                |  Close Project
+  // Portfolio Modal 3
+  #portfolioModal3.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+    .modal-content
+      .close-modal(data-dismiss='modal')
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              // Project Details Go Here
+              h2 Project Name
+              p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+              img.img-responsive.img-centered(src='img/portfolio/treehouse-preview.png' alt='')
+              p
+                | Treehouse is a free PSD web template built by
+                a(href='https://www.behance.net/MathavanJaya') Mathavan Jaya
+                | . This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.
+              p
+                | You can download the PSD template in this portfolio sample item at
+                a(href='http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/') FreebiesXpress.com
+                | .
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                i.fa.fa-times
+                |  Close Project
+  // Portfolio Modal 4
+  #portfolioModal4.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+    .modal-content
+      .close-modal(data-dismiss='modal')
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              // Project Details Go Here
+              h2 Project Name
+              p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+              img.img-responsive.img-centered(src='img/portfolio/golden-preview.png' alt='')
+              p
+                | Start Bootstrap&apos;s Agency theme is based on Golden, a free PSD website template built by
+                a(href='https://www.behance.net/MathavanJaya') Mathavan Jaya
+                | . Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.
+              p
+                | You can download the PSD template in this portfolio sample item at
+                a(href='http://freebiesxpress.com/gallery/golden-free-one-page-web-template/') FreebiesXpress.com
+                | .
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                i.fa.fa-times
+                |  Close Project
+  // Portfolio Modal 5
+  #portfolioModal5.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+    .modal-content
+      .close-modal(data-dismiss='modal')
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              // Project Details Go Here
+              h2 Project Name
+              p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+              img.img-responsive.img-centered(src='img/portfolio/escape-preview.png' alt='')
+              p
+                | Escape is a free PSD web template built by
+                a(href='https://www.behance.net/MathavanJaya') Mathavan Jaya
+                | . Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.
+              p
+                | You can download the PSD template in this portfolio sample item at
+                a(href='http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/') FreebiesXpress.com
+                | .
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                i.fa.fa-times
+                |  Close Project
+  // Portfolio Modal 6
+  #portfolioModal6.portfolio-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
+    .modal-content
+      .close-modal(data-dismiss='modal')
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              // Project Details Go Here
+              h2 Project Name
+              p.item-intro.text-muted Lorem ipsum dolor sit amet consectetur.
+              img.img-responsive.img-centered(src='img/portfolio/dreams-preview.png' alt='')
+              p
+                | Dreams is a free PSD web template built by
+                a(href='https://www.behance.net/MathavanJaya') Mathavan Jaya
+                | . Dreams is a modern one page web template designed for almost any purpose. It&rsquo;s a beautiful template that&rsquo;s designed with the Bootstrap framework in mind.
+              p
+                | You can download the PSD template in this portfolio sample item at
+                a(href='http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/') FreebiesXpress.com
+                | .
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                i.fa.fa-times
+                |  Close Project
+
+
+  div#map(style="position:absolute; top:100px; width:50%; margin-left:25%; height:400px; z-index:1;")
+  div(style="position:absolute; top:100px; width:100%; height:600px; text-align:center; z-index:2; background: url()")
+    img.img-responsive(src="img/panoptico-mask-w.png", align="center", style="text-align:center;")
+  // jQuery
+  script(src='js/jquery.js')
+  // Bootstrap Core JavaScript
+  script(src='js/bootstrap.min.js')
+  // Plugin JavaScript
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+  script(src='js/classie.js')
+  script(src='js/cbpAnimatedHeader.js')
+  // Contact Form JavaScript
+  script(src='js/jqBootstrapValidation.js')
+  script(src='js/contact_me.js')
+  // Custom Theme JavaScript
+  script(src='js/agency.js')
+
+
+  script(src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js')
+  script(src="js/AnimatedMarker.js")
+  script.
+    // create a map in the "map" div, set the view to a given place and zoom
+    var map = L.map('map',{scrollWheelZoom: false}).setView([40.735, -73.99], 17),
+    routeLines = [
+      L.polyline([[40.68510, -73.94136],[40.68576, -73.94149],[40.68649, -73.94165],[40.68722, -73.94178],[40.68795, -73.94193],[40.68869, -73.94207],[40.68942, -73.94223],[40.69016, -73.94236],[40.69089, -73.94251],[40.69162, -73.94266],[40.69234, -73.94281],[40.69309, -73.94295],[40.69337, -73.94301],[40.69382, -73.94310],[40.69455, -73.94324],[40.69527, -73.94339],[40.69603, -73.94353],[40.69822, -73.94394],[40.69897, -73.94409],[40.69968, -73.94424],[40.70042, -73.94438],[40.70053, -73.94440],[40.70109, -73.94501],[40.70165, -73.94564],[40.70221, -73.94627],[40.70277, -73.94690],[40.70335, -73.94753],[40.70388, -73.94814],[40.70407, -73.94779],[40.70436, -73.94781],[40.70544, -73.94798],[40.70685, -73.94819],[40.70759, -73.94830],[40.70830, -73.94842],[40.70901, -73.94854],[40.70879, -73.95076],[40.70914, -73.95083],[40.70971, -73.95236],[40.71026, -73.95385],[40.71059, -73.95473],[40.71055, -73.95509],[40.71058, -73.95551],[40.71065, -73.95625],[40.71065, -73.95647],[40.71051, -73.95709],[40.71044, -73.95736],[40.71035, -73.95833],[40.71032, -73.95875],[40.71078, -73.95994],[40.71103, -73.96058],[40.71047, -73.96094],[40.71041, -73.96113],[40.71061, -73.96176],[40.71115, -73.96354],[40.71162, -73.96508],[40.71217, -73.96703],[40.71215, -73.96730],[40.71549, -73.97831],[40.71544, -73.97834],[40.71757, -73.98535],[40.71770, -73.98579],[40.71783, -73.98572],[40.71908, -73.98507],[40.71933, -73.98591],[40.71958, -73.98675],[40.71983, -73.98754],[40.72007, -73.98835],[40.72030, -73.98911],[40.72046, -73.98962],[40.72052, -73.98985],[40.72076, -73.99063],[40.72102, -73.99150],[40.72115, -73.99195],[40.72124, -73.99224],[40.72139, -73.99273],[40.72161, -73.99346],[40.72234, -73.99320],[40.72238, -73.99332],[40.72272, -73.99416],[40.72303, -73.99490],[40.72336, -73.99570],[40.72368, -73.99647],[40.72388, -73.99695],[40.72423, -73.99779],[40.72462, -73.99858],[40.72500, -73.99934],[40.72538, -74.00010],[40.72576, -74.00089],[40.72611, -74.00159],[40.72649, -74.00236],[40.72687, -74.00312],[40.72690, -74.00321],[40.72694, -74.00327],[40.72695, -74.00337],[40.72695, -74.00344],[40.72766, -74.00316],[40.72831, -74.00308],[40.72838, -74.00309],[40.72871, -74.00330],[40.72934, -74.00365],[40.72987, -74.00397],[40.73044, -74.00430],[40.73071, -74.00446],[40.73100, -74.00462],[40.73154, -74.00493],[40.73135, -74.00553],[40.73162, -74.00570],[40.73158, -74.00578],[40.73163, -74.00632]]),
+      L.polyline([[40.73271, -73.99818],[40.73261, -73.99828],[40.73221, -73.99861],[40.73192, -73.99849],[40.73118, -73.99819],[40.73096, -73.99773],[40.73093, -73.99775],[40.73088, -73.99776],[40.73078, -73.99774],[40.73071, -73.99766],[40.73049, -73.99788],[40.73028, -73.99749],[40.72987, -73.99667],[40.72955, -73.99655],[40.72918, -73.99582],[40.72881, -73.99506],[40.72840, -73.99425],[40.72815, -73.99372],[40.72786, -73.99314],[40.72711, -73.99161],[40.72705, -73.99148],[40.72618, -73.98942],[40.72558, -73.98987],[40.72518, -73.99016],[40.72491, -73.99034],[40.72426, -73.99082],[40.72402, -73.99103],[40.72365, -73.99101],[40.72240, -73.99164],[40.72218, -73.99091],[40.72191, -73.99004],[40.72167, -73.98924],[40.72161, -73.98903],[40.72146, -73.98852],[40.72123, -73.98776],[40.72097, -73.98695],[40.72074, -73.98615],[40.72048, -73.98531],[40.71933, -73.98591],[40.71808, -73.98655],[40.71797, -73.98660],[40.71770, -73.98579],[40.71757, -73.98535],[40.71544, -73.97834],[40.71538, -73.97837],[40.71203, -73.96735],[40.71186, -73.96721],[40.71125, -73.96529],[40.71092, -73.96426],[40.71074, -73.96366],[40.71121, -73.96337],[40.71190, -73.96294],[40.71244, -73.96446],[40.71307, -73.96408],[40.71382, -73.96360],[40.71445, -73.96320],[40.71510, -73.96278],[40.71558, -73.96229],[40.71593, -73.96191],[40.71638, -73.96142],[40.71697, -73.96079],[40.71752, -73.96019],[40.71808, -73.95960],[40.71862, -73.95900],[40.71904, -73.95856]]),
+      L.polyline([[40.72022, -74.00005],[40.72043, -73.99986],[40.72142, -73.99904],[40.72265, -73.99798],[40.72388, -73.99695],[40.72466, -73.99631],[40.72520, -73.99584],[40.72508, -73.99533],[40.72585, -73.99471],[40.72593, -73.99464],[40.72601, -73.99458],[40.72626, -73.99440],[40.72664, -73.99412],[40.72728, -73.99364],[40.72786, -73.99314],[40.72988, -73.99141],[40.72979, -73.99074],[40.72974, -73.99036],[40.72955, -73.98991],[40.72988, -73.98966],[40.72990, -73.98891],[40.72999, -73.98736],[40.72977, -73.98682],[40.72878, -73.98443],[40.72937, -73.98400],[40.73001, -73.98353],[40.73064, -73.98306],[40.73135, -73.98255],[40.73202, -73.98206],[40.73221, -73.98192],[40.73265, -73.98160],[40.73325, -73.98115],[40.73382, -73.98073],[40.73406, -73.98056],[40.73442, -73.98030],[40.73498, -73.97990],[40.73558, -73.97943],[40.73619, -73.97899],[40.73687, -73.97851],[40.73755, -73.97805],[40.73816, -73.97760],[40.73879, -73.97715],[40.73941, -73.97670],[40.74002, -73.97625],[40.74013, -73.97616],[40.74064, -73.97581],[40.74127, -73.97534],[40.74145, -73.97521],[40.74217, -73.97467],[40.74309, -73.97402],[40.74378, -73.97351],[40.74445, -73.97303],[40.74506, -73.97257],[40.74568, -73.97212],[40.74629, -73.97167],[40.74692, -73.97122],[40.74751, -73.97073],[40.74783, -73.97049],[40.74865, -73.96990],[40.75200, -73.96746],[40.75283, -73.96690],[40.75312, -73.96669],[40.75324, -73.96661],[40.75334, -73.96654],[40.75387, -73.96615],[40.75450, -73.96569],[40.75513, -73.96524],[40.75575, -73.96478],[40.75638, -73.96432],[40.75700, -73.96387],[40.75763, -73.96341],[40.75831, -73.96292],[40.75898, -73.96243],[40.75961, -73.96197],[40.76023, -73.96152],[40.76023, -73.96163],[40.76071, -73.96278],[40.76068, -73.96280],[40.76061, -73.96276],[40.76017, -73.96168],[40.75956, -73.96033],[40.75797, -73.95673],[40.75521, -73.95040],[40.75353, -73.94654],[40.75148, -73.94183],[40.75105, -73.94082],[40.75106, -73.94068],[40.75108, -73.94075]])
+      ];
+    var tracker = L.icon({
+        iconUrl: 'img/02.png',
+        iconSize: [32, 32],
+        iconAnchor: [32, 32],
+        shadowUrl: null
+    });
+    // create a tile layer sourced from mapbox
+    L.tileLayer('https://{s}.tiles.mapbox.com/v4/fernando.i0b5no8h/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZmVybmFuZG8iLCJhIjoib29xOGNfbyJ9.bAxNNENyPazSKDPNTC_8Vw').addTo(map);
+    f = 10;
+    i = 0;
+    max = 13;
+    min = 1;
+    x = Math.random() * (max - min) + max;
+    max = 10;
+    min = -10; 
+    y = Math.random() * (max - min) + min;
+    w = $(window).width();
+    h = $(window).height();
+    // asks location to the browser, if given, it points the map to it. 
+    //map.locate({setView: true});
+    $("body").mousemove(function(e) {
+        w = $(window).width();
+        h = $(window).height();
+        x = (e.pageX-(w/2))/30;
+        y = (e.pageY-(h/2))/30;
+    });
+
+    setInterval(function(){
+      f = 30;
+      if(i==f){
+        i=0;
+        x = Math.random() * (max - min) + min;
+        max = 11;
+        min = 5;
+        miny = -5;
+        y = Math.random() * (max - miny) + miny;
+      }
+      i = i + 1;
+      map.panBy([x, y], {animate: true,noMoveStart:true, easeLinearity:0, duration: 1});}, 200);
+    //setInterval(function(){
+    //  var max = 100;
+    //  var min = -50;
+    //  var x = Math.random() * (max - min) + min;
+    //  var y = Math.random() * (max - min) + min;
+    //  console.log(y + 'y');
+    //  map.panBy([x, y], {animate: true, duration: 1});}, 1500);
+
+
