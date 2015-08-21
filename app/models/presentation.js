@@ -7,6 +7,7 @@ var PresentationSchema = new Schema({
   title: String,
   subtitle: String,
   speaker_id: String,
+  presentation_type: String,
   url: String,
   text: String,
   approved: Boolean,

@@ -92,19 +92,16 @@ block content
           .ui.inverted.icon.message
             i.calendar.icon
             .content
-              .header.inverted #{__('El cfp inicia el XX/2105. ')}
+              .header.inverted #{__('El llamado a presentaciones comienza el XX/2105. ')}
               .description
                 img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-
 
     .ui.vertical.stripe.segment
       .ui.container
         .row
           div#donde
-            h1 #{__('Dónde? en el Instituto Geográfico Nacional')}
-            h2 #{__('en la Ciudad de Buenos Aires.')}
+            h1 #{__('Dónde?')}
+            h2 #{__('En XXXXXXXXXXXXXXXXXX, Buenos Aires, Argentina.')}
             #map
             script.
               var map = L.map('map',{scrollWheelZoom: false}).setView([-34.57198,-58.44017],17);

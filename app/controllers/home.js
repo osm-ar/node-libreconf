@@ -5,6 +5,7 @@ var express = require('express'),
   Article = mongoose.model('Article'),
   Speaker = mongoose.model('Speaker'),
   Presentation = mongoose.model('Presentation'),
+  PresentationType = mongoose.model('PresentationType'),
   Sponsor = mongoose.model('Sponsor'),
   SponsorType = mongoose.model('SponsorType');
 
@@ -22,32 +23,27 @@ router.get('/', function (req, res, next) {
         if (err) return next(err);
         Presentation.find(function (err, presentations) {
           if (err) return next(err);
-          Sponsor.find(function (err, sponsors) {
+          PresentationType.find(function (err, presentation_types) {
             if (err) return next(err);
-
-            SponsorType.find(function (err, sponsor_types) {
+            Sponsor.find(function (err, sponsors) {
               if (err) return next(err);
-              return res.render('index', {
-                title: configurable.title,
-                slogan: configurable.slogan,
-                articles: articles,
-                speakers: speakers,
-                presentations: presentations,
-                sponsors: sponsors,
-                sponsor_types: sponsor_types
-              });   
-
-
-            });          
+              SponsorType.find(function (err, sponsor_types) {
+                if (err) return next(err);
+                return res.render('index', {
+                  title: configurable.title,
+                  slogan: configurable.slogan,
+                  articles: articles,
+                  speakers: speakers,
+                  presentations: presentations,
+                  presentation_types: presentation_types,
+                  sponsors: sponsors,
+                  sponsor_types: sponsor_types
+                });   
+              }); 
+            });                     
           });
         });
       });
     });
   });
-
-
-
-
-
-
 });
