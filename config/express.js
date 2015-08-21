@@ -15,6 +15,7 @@ var admin = require('swan-admin'),
   Article = mongoose.model('Article'),
   Speaker = mongoose.model('Speaker'),
   Presentation = mongoose.model('Presentation'),
+  Conference = mongoose.model('Conference'),
   Sponsor = mongoose.model('Sponsor'),
   SponsorType = mongoose.model('SponsorType');
 
@@ -115,6 +116,17 @@ module.exports = function(app, config) {
               editor: 'markdown'
             },
             text: { 
+              editor: 'markdown'
+            }
+          }
+        },
+        {
+          mongooseModel: Conference,
+          name: __('Conference'), pluralName: __('Conferences'), toString: 'title', fields: {
+            subtitle: { 
+              editor: 'markdown'
+            },
+            description: { 
               editor: 'markdown'
             }
           }
