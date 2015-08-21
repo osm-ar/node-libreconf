@@ -8,10 +8,10 @@
       "themes": "src/themes/"
     },
     "output": {
-      "packaged": "../../themes/default/public/semantic-ui/",
-      "uncompressed": "../../default/public/semantic-ui/components/",
-      "compressed": "../../default/public/semantic-ui/components/",
-      "themes": "../../default/public/semantic-ui/themes/"
+      "packaged": "../../themes/foss4g-ba-2016/public/semantic-ui/",
+      "uncompressed": "../../foss4g-ba-2016/public/semantic-ui/components/",
+      "compressed": "../../foss4g-ba-2016/public/semantic-ui/components/",
+      "themes": "../../foss4g-ba-2016/public/semantic-ui/themes/"
     },
     "clean": "dist/"
   },
