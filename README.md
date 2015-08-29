@@ -11,7 +11,7 @@ Asuming you already have [Node.js](http://nodejs.org/) and git installed:
 ### Clone node-libreconf
 
 ```shell
-$ git clone https://github.com/f3rnando/node-libreconf.git
+$ git clone https://github.com/osm-ar/node-libreconf
 $ cd node-libreconf
 $ npm install
 ```
