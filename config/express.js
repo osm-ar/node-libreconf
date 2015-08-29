@@ -78,6 +78,7 @@ module.exports = function(app, config) {
       pluralName: __('Articulos'),
       toString: 'title',
       fields: {
+        title: {},
         text: {
           editor: 'markdown'
         }
@@ -88,6 +89,11 @@ module.exports = function(app, config) {
       pluralName: __('Speakers'),
       toString: 'lastname',
       fields: {
+        firstname: {},
+        lastname: {},
+        avatar: {},
+        twitter: {},
+        email: {},
         bio: {
           editor: 'markdown'
         }
@@ -98,6 +104,9 @@ module.exports = function(app, config) {
       pluralName: __('Sponsors'),
       toString: 'title',
       fields: {
+        title: {},
+        logo_url: {},
+        url: {},
         text: {
           editor: 'markdown'
         }
@@ -108,6 +117,7 @@ module.exports = function(app, config) {
       pluralName: __('SponsorTypes'),
       toString: 'title',
       fields: {
+        title: {},
         text: {
           editor: 'markdown'
         }
@@ -118,6 +128,7 @@ module.exports = function(app, config) {
       pluralName: __('Configurables'),
       toString: 'title',
       fields: {
+        title: {},
         slogan: {
           editor: 'markdown'
         }
@@ -128,9 +139,12 @@ module.exports = function(app, config) {
       pluralName: __('Presentations'),
       toString: 'title',
       fields: {
+        title: {},
         subtitle: {
           editor: 'markdown'
         },
+        when: {},
+        speaker_id: {},
         text: {
           editor: 'markdown'
         }
@@ -141,6 +155,7 @@ module.exports = function(app, config) {
       pluralName: __('PresentationTypes'),
       toString: 'title',
       fields: {
+        title: {},
         text: {
           editor: 'markdown'
         }
@@ -151,6 +166,7 @@ module.exports = function(app, config) {
       pluralName: __('Conferences'),
       toString: 'title',
       fields: {
+        title: {},
         subtitle: {
           editor: 'markdown'
         },
