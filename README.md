@@ -36,6 +36,11 @@ MongoDB objects via an admin interface
 
 ## Admin Interface 
 
+The admin interface has a default user/password combination by default
+
+User: `geoinquietos`
+Password: `libreconf`
+
 #### /admin 
 
 The url `/admin` show a [swan-admin](https://npmjs.com/package/swan-admin) instance.
