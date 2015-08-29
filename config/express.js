@@ -26,7 +26,7 @@ module.exports = function(app, config) {
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
-  app.set('views', config.root + '/themes/' + config.theme + '/views');
+  app.set('views', [config.root + '/themes/' + config.theme + '/views']);
   app.set('view engine', 'jade');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
