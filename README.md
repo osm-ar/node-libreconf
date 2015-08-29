@@ -4,6 +4,9 @@
 
 Based on nodejs, [express](http://expressjs.com/4x/api.html), mongodb, [mongoose](http://mongoosejs.com/docs/guide.html), [jade](http://jade-lang.com/), [i18n](https://www.npmjs.com/package/i18n), [etc.](https://github.com/osm-ar/node-libreconf/blob/develop/package.json)
 
+![image](http://i.imgur.com/bU0A3fh.png)
+
+
 ## Installation
 
 Asuming you already have [Node.js](http://nodejs.org/) and git installed:
@@ -27,6 +30,7 @@ $ gulp
 
 Set `config/config.js` with your own values.
 
+![image](http://i.imgur.com/8rwkghc.png)
 
 The configuration object has main properties on which config values
 are set.
