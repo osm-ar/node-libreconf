@@ -8,7 +8,7 @@ var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-var admin = require('swan-admin'),
+var admin = require('../lib/admin'),
   router = express.Router(),
   mongoose = require('mongoose'),
   Configurable = mongoose.model('Configurable'),
@@ -68,86 +68,8 @@ module.exports = function(app, config) {
     next();
   });
 
-  app.use('/admin', admin({
-      models: [
-        {
-          mongooseModel: Article,
-          name: __('Articulo'), pluralName: __('Articulos'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        }, 
-        {
-          mongooseModel: Speaker,
-          name: __('Speaker'), pluralName: __('Speakers'), toString: 'lastname', fields: {
-            bio: { 
-              editor: 'markdown'
-            }
-          }
-        }, 
-        {
-          mongooseModel: Sponsor,
-          name: __('Sponsor'), pluralName: __('Sponsors'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: SponsorType,
-          name: __('Sponsor Type'), pluralName: __('SponsorTypes'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: Configurable,
-          name: __('Configurable'), pluralName: __('Configurables'), toString: 'title', fields: {
-            slogan: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: Presentation,
-          name: __('Presentation'), pluralName: __('Presentations'), toString: 'title', fields: {
-            subtitle: { 
-              editor: 'markdown'
-            },
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: PresentationType,
-          name: __('Presentation Type'), pluralName: __('PresentationTypes'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: Conference,
-          name: __('Conference'), pluralName: __('Conferences'), toString: 'title', fields: {
-            subtitle: { 
-              editor: 'markdown'
-            },
-            description: { 
-              editor: 'markdown'
-            }
-          }
-        }        
-      ],
-      credentials: {
-          username: 'geoinquietos',
-          password: 'libreconf'
-      },
-      sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
-  }));
-
+  app.use('/admin', admin());
+  
   app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
