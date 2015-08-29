@@ -161,10 +161,11 @@ block content
       .ui.container
         .row
           h1 #{__('Sponsors')}
-          each sponsor in sponsors
-            .ui.four.wide
-              a.ui.wide(href=sponsor.url)
-                img(src=sponsor.ad_url)
+          .ui.grid
+            each sponsor in sponsors
+              .ui.four.wide.column
+                a.ui.wide(href=sponsor.url)
+                  img(src=sponsor.ad_url)
     .ui.vertical.stripe.segment
       .ui.text.container
         each article in articles
