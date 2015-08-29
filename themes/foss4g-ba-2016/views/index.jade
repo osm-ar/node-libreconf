@@ -26,7 +26,7 @@ block content
 
   // Page Contents
   .pusher
-    .ui.inverted.vertical.masthead.center.aligned.segment
+    .ui.inverted.vertical.masthead.center.aligned.segment(style="background-image: url(/img/bg-1.png)")
       .ui.container
         .ui.large.secondary.inverted.pointing.menu
           a.toc.item
@@ -52,10 +52,10 @@ block content
       .ui.middle.aligned.stackable.grid.container
         .row
           h1 #{__('Oradores')}
-        .row.ui.link.cards
+        .row.ui.link.four.cards
             each speaker in speakers
             
-              .card.four.wide
+              .card.wide
                 .ui.dimmer
                   .content
                     .center
@@ -84,55 +84,95 @@ block content
             i.calendar.icon
             .content
               .header.inverted #{__('Las incripciones serán abiertas el XX/2105. ')}
+              .description
+                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
     .ui.vertical.inverted.stripe.segment#cfp
       .ui.container
         .row
           .ui.inverted.icon.message
             i.calendar.icon
             .content
-              .header.inverted #{__('El cfp inicia el XX/2105. ')}
+              .header.inverted #{__('El llamado a presentaciones comienza el XX/2105. ')}
+              .description
+                img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
 
-
-    .ui.stripe.quote.segment.inverted
-      .ui.equal.width.stackable.internally.celled.grid.inverted
-        .center.aligned.row
-          .column#donde
-            h1 #{__('Dónde? en el Instituto Geográfico Nacional')}
-            h2 #{__('en la Ciudad de Buenos Aires.')}
+    .ui.vertical.stripe.segment
+      .ui.container
+        .row
+          div#donde
+            h1 #{__('Dónde?')}
+            h2 #{__('En XXXXXXXXXXXXXXXXXX, Buenos Aires, Argentina.')}
             #map
             script.
-              var map = L.map('map').setView([-34.57198,-58.44017],17);
+              var map = L.map('map',{scrollWheelZoom: false}).setView([-34.57198,-58.44017],17);
               L.tileLayer('https://a.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
                   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
                   maxZoom: 18,
                   id: 'fernando.jbnfnb8i',
                   accessToken: 'pk.eyJ1IjoiZmVybmFuZG8iLCJhIjoib29xOGNfbyJ9.bAxNNENyPazSKDPNTC_8Vw'
               }).addTo(map);
+
+    .ui.vertical.stripe.segment
+      .ui.container
+        .row  
           .column
-            .ui.medium.images
-              img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-1.jpg")
-              img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-3.jpg")
-              img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-w.jpg")
+            .ui.items.inverted
+              .item
+                .content
+                  .header
+                    h1.right #{__('Talleres')}
+                  .meta
+                    span.price
+                    span.stay
+                  .description
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                .ui.medium.image
+                  img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-3.jpg")
+              .item
+                .ui.large.image
+                  img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-w.jpg")
+                .content
+                  .header 
+                    h1 #{__('Presentaciones')}
+                  .meta
+                    span.price
+                    span.stay
+                  .description
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+              .item
+                .content
+                  .header
+                    h1 #{__('Comunidad')}
+                  .meta
+                    span.price
+                    span.stay
+                  .description
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                .ui.large.image.right
+                  img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-1.jpg")
+              
 
     .ui.vertical.stripe.segment
       .ui.container
         .row
+          h1 #{__('Sponsors')}
           each sponsor in sponsors
             .ui.four.wide
               a.ui.wide(href=sponsor.url)
                 img(src=sponsor.ad_url)
     .ui.vertical.stripe.segment
       .ui.text.container
-        h3.ui.header Breaking The Grid, Grabs Your Attention
-        p
-          | Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.
-        a.ui.large.button Read More
-        h4.ui.horizontal.header.divider
-          a(href='#') Case Studies
-        h3.ui.header Did We Tell You About Our Bananas?
-        p
-          | Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
-        a.ui.large.button Im Still Quite Interested
+        each article in articles
+          h3.ui.header #{article.title}
+          p #{article.text}
+          a.ui.large.button #{__('Leer más')]
+          h4.ui.horizontal.header.divider
+            a(href='#') -
     .ui.notinverted.vertical.footer.segment
       .ui.container
         .ui.stackable.notinverted.divided.equal.height.stackable.grid
@@ -151,7 +191,15 @@ block content
               a.item(href='#') #{__('Términos')}
               a.item(href='#') #{__('Temas')}
               a.item(href='#') #{__('Grilla/Horarios')}
-          .seven.wide.column
+          .three.wide.column
+            h4.ui.notinverted.header #{__('Hecho con')}
+            .ui.notinverted.link.list
+              a.item(href='https://github.com/osm-ar/node-libreconf') #{__('libreconf')}
+            h4.ui.notinverted.header #{__('por')}
+            .ui.notinverted.link.list
+              a.item(href='#') #{__('geoinquietos')}
+              a.item(href='https://github.com/osm-ar') #{__('osm-ar')}
+          .four.wide.column
             h4.ui.notinverted.header #{__('Organiza')]
             img.ui.image(src="/img/geoinquietos-isologo-blanco.png")
   script.

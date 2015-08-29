@@ -9,7 +9,7 @@ var SponsorSchema = new Schema({
   ad_url: String,
   url: String,
   text: String,
-  sposor_type: Number,
+  sposor_type: String,
   enabled: Boolean
 });
 
