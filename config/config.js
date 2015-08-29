@@ -12,7 +12,12 @@ var config = {
       name: 'node-libreconf'
     },
     port: 3000,
-    db: 'mongodb://localhost/node-libreconf-development'
+    db: 'mongodb://localhost/node-libreconf-development',
+    credentials: {
+      username: 'geoinquietos',
+      password: 'libreconf'
+    },
+    sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
   },
 
   test: {
@@ -24,7 +29,12 @@ var config = {
       name: 'node-libreconf'
     },
     port: 3000,
-    db: 'mongodb://localhost/node-libreconf-test'
+    db: 'mongodb://localhost/node-libreconf-test',
+    credentials: {
+      username: 'geoinquietos',
+      password: 'libreconf'
+    },
+    sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
   },
 
   production: {
@@ -36,7 +46,12 @@ var config = {
       name: 'node-libreconf'
     },
     port: 3000,
-    db: 'mongodb://localhost/node-libreconf-production'
+    db: 'mongodb://localhost/node-libreconf-production',
+    credentials: {
+      username: 'geoinquietos',
+      password: 'libreconf'
+    },
+    sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
   }
 };
 
