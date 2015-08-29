@@ -6,6 +6,8 @@ Based on nodejs, [express](http://expressjs.com/4x/api.html), mongodb, [mongoose
 
 ![image](http://i.imgur.com/bU0A3fh.png)
 
+![image](http://i.imgur.com/TIc6oiX.png)
+
 
 ## Installation
 
