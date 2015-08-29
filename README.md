@@ -32,8 +32,6 @@ $ gulp
 
 Set `config/config.js` with your own values.
 
-![image](http://i.imgur.com/8rwkghc.png)
-
 The configuration object has main properties on which config values
 are set.
 
@@ -56,6 +54,9 @@ are set.
 
 Administration currently is mostly based on writing raw
 MongoDB objects via a web admin interface based on a [swan-admin](https://npmjs.com/package/swan-admin) instance.
+
+![image](http://i.imgur.com/8rwkghc.png)
+
 
 ## Admin Interface 
 
