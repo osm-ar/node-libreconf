@@ -27,21 +27,37 @@ $ gulp
 
 Set `config/config.js` with your own values.
 
-* **Check your MongoDB URL**.
+
+The configuration object has main properties on which config values
+are set.
+
+    var config = {
+      development: {},
+      test: {},
+      production: {}
+    }
+
+ The set of config values affecting the rutime depends on the environment variable `ENV`. 
+ 
+ If `ENV` is set to `development`, then the config values under the property `development` will be used by the runtime and not the others.
+
+**By default, and if `ENV` is not set, the config values under the  `development` property will be used**.
+
+** Tip** 
+* **Check your MongoDB URL first in your config values**.
 
 ## Administration
 
-Administration now is mostly based on writing raw
-MongoDB objects via an admin interface
+Administration currently is mostly based on writing raw
+MongoDB objects via a web admin interface based on a [swan-admin](https://npmjs.com/package/swan-admin) instance.
 
 ## Admin Interface 
 
-The admin interface has a default user/password combination by default
+The admin interface has a default user/password combination:
 
-User: `geoinquietos`
-Password: `libreconf`
+* **User**: `geoinquietos`
+* **Password**: `libreconf`
 
-#### /admin 
 
 The url `/admin` show a [swan-admin](https://npmjs.com/package/swan-admin) instance.
 
