@@ -1,0 +1,31 @@
+extends layout
+
+prepend title
+  | All #{model.pluralName} &mdash;
+
+block content
+  h1 All #{model.pluralName}
+  div.pull-right
+    +makeLink(model, null, extras='/create')
+      span.btn.btn-primary.btn-xs Create a new #{model.name}
+  p Found #{instances.length} instances.
+
+  table.table.table-striped.table-hover.model-table
+    thead
+      tr
+        th.id ID
+        th.model-description.model-name #{model.name}
+        th.actions Actions
+    tbody
+      each instance in instances
+        tr
+          td.id
+            +makeLink(model, instance)= instance.id
+          td.model-description
+            +makeLink(model, instance)= model.toString(instance)
+          td.actions
+            +makeLink(model, instance)
+              span.btn.btn-warning.btn-xs Edit
+            |  
+            +makeLink(model, instance, extras='/remove')
+              span.btn.btn-danger.btn-xs Remove

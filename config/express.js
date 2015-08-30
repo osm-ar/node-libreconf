@@ -8,7 +8,8 @@ var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-var admin = require('swan-admin'),
+var admin = require('../lib/admin'),
+  installer = require("../lib/installer"),
   router = express.Router(),
   mongoose = require('mongoose'),
   Configurable = mongoose.model('Configurable'),
@@ -24,8 +25,8 @@ module.exports = function(app, config) {
   var env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
-  
-  app.set('views', config.root + '/themes/' + config.theme + '/views');
+
+  app.set('views', [config.root + '/themes/' + config.theme + '/views']);
   app.set('view engine', 'jade');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
@@ -34,16 +35,17 @@ module.exports = function(app, config) {
   app.use(bodyParser.urlencoded({
     extended: true
   }));
+  app.use(installer());
 
-  app.use(compress());  
+  app.use(compress());
   app.use(methodOverride());
-  
+
   app.use(cookieParser());
 
   app.use(express.static(config.root + '/themes/' + config.theme + '/public'));
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
-  controllers.forEach(function (controller) {
+  controllers.forEach(function(controller) {
     require(controller)(app);
   });
 
@@ -59,7 +61,8 @@ module.exports = function(app, config) {
   __ = i18n.__;
   app.locals.__ = i18n.__;
   app.locals.__n = i18n.__n;
-  console.log(app.locals.__("Internationalization initialized. Current locale: ") + i18n.getLocale());
+  console.log(app.locals.__(
+    "Internationalization initialized. Current locale: ") + i18n.getLocale());
 
   app.use('*', function(req, res, next) {
     var catalogs = i18n.getCatalog();
@@ -68,94 +71,17 @@ module.exports = function(app, config) {
     next();
   });
 
-  app.use('/admin', admin({
-      models: [
-        {
-          mongooseModel: Article,
-          name: __('Articulo'), pluralName: __('Articulos'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        }, 
-        {
-          mongooseModel: Speaker,
-          name: __('Speaker'), pluralName: __('Speakers'), toString: 'lastname', fields: {
-            bio: { 
-              editor: 'markdown'
-            }
-          }
-        }, 
-        {
-          mongooseModel: Sponsor,
-          name: __('Sponsor'), pluralName: __('Sponsors'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: SponsorType,
-          name: __('Sponsor Type'), pluralName: __('SponsorTypes'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: Configurable,
-          name: __('Configurable'), pluralName: __('Configurables'), toString: 'title', fields: {
-            slogan: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: Presentation,
-          name: __('Presentation'), pluralName: __('Presentations'), toString: 'title', fields: {
-            subtitle: { 
-              editor: 'markdown'
-            },
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: PresentationType,
-          name: __('Presentation Type'), pluralName: __('PresentationTypes'), toString: 'title', fields: {
-            text: { 
-              editor: 'markdown'
-            }
-          }
-        },
-        {
-          mongooseModel: Conference,
-          name: __('Conference'), pluralName: __('Conferences'), toString: 'title', fields: {
-            subtitle: { 
-              editor: 'markdown'
-            },
-            description: { 
-              editor: 'markdown'
-            }
-          }
-        }        
-      ],
-      credentials: {
-          username: 'geoinquietos',
-          password: 'libreconf'
-      },
-      sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
-  }));
+  app.use('/admin', admin());
 
-  app.use(function (req, res, next) {
+  app.use(function(req, res, next) {
+
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
-  
-  if(app.get('env') === 'development'){
-    app.use(function (err, req, res, next) {
+
+  if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
       res.status(err.status || 500);
       res.render('error', {
         message: err.message,
@@ -165,13 +91,13 @@ module.exports = function(app, config) {
     });
   }
 
-  app.use(function (err, req, res, next) {
+  app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-      res.render('error', {
-        message: err.message,
-        error: {},
-        title: 'error'
-      });
+    res.render('error', {
+      message: err.message,
+      error: {},
+      title: 'error'
+    });
   });
 
 };

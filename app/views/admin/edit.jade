@@ -1,0 +1,18 @@
+extends layout
+
+include _editor_mixins.jade
+
+prepend title
+  | Editing #{model.name}: #{model.toString(instance)} &mdash;
+
+block content
+  h1 Editing #{model.name}: #{model.toString(instance)}
+  p ID: #{instance.id}.
+
+  form(method='post', role='form').form-horizontal.model-form
+    each fieldData, fieldName in model.fields
+      .form-group
+        label.control-label.col-sm-2 #{fieldName}
+        +editor(fieldName, instance.get(fieldName) , fieldData.editor)
+    button(type='submit').btn.btn-success Save this #{model.name}
+
