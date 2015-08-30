@@ -170,8 +170,8 @@ block content
       .ui.text.container
         each article in articles
           h3.ui.header #{article.title}
-          p #{article.text}
-          a.ui.large.button #{__('Leer más')]
+          !{article.text}
+          //a.ui.large.button #{__('Leer más')]
           h4.ui.horizontal.header.divider
             a(href='#') -
     .ui.notinverted.vertical.footer.segment

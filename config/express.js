@@ -53,7 +53,7 @@ module.exports = function(app, config) {
   i18n.configure({
     locales: config.locales,
     directory: config.directory,
-    debug: true,
+    debug: false,
     indent: "  "
   });
 
