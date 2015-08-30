@@ -7,7 +7,7 @@ var config = {
     root: rootPath,
     theme: 'foss4g-ba-2016',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
-    locales_path: './config/locales',
+    locales_path: './locales',
     app: {
       name: 'node-libreconf'
     },
@@ -24,7 +24,7 @@ var config = {
     root: rootPath,
     theme: 'default',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
-    locales_path: './config/locales',
+    locales_path: './locales',
     app: {
       name: 'node-libreconf'
     },
@@ -41,7 +41,7 @@ var config = {
     root: rootPath,
     theme: 'default',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
-    locales_path: './config/locales',
+    locales_path: './locales',
     app: {
       name: 'node-libreconf'
     },

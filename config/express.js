@@ -52,8 +52,11 @@ module.exports = function(app, config) {
 
   i18n.configure({
     locales: config.locales,
-    directory: config.directory,
+    directory: config.locales_path,
+    defaultLocale: 'es',
+    cookie: '_lang_',
     debug: false,
+    updateFiles: true,
     indent: "  "
   });
 
