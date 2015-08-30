@@ -4,6 +4,11 @@
 
 Based on nodejs, [express](http://expressjs.com/4x/api.html), mongodb, [mongoose](http://mongoosejs.com/docs/guide.html), [jade](http://jade-lang.com/), [i18n](https://www.npmjs.com/package/i18n), [etc.](https://github.com/osm-ar/node-libreconf/blob/develop/package.json)
 
+![image](http://i.imgur.com/bU0A3fh.png)
+
+![image](http://i.imgur.com/TIc6oiX.png)
+
+
 ## Installation
 
 Asuming you already have [Node.js](http://nodejs.org/) and git installed:
@@ -27,7 +32,6 @@ $ gulp
 
 Set `config/config.js` with your own values.
 
-
 The configuration object has main properties on which config values
 are set.
 
@@ -50,6 +54,9 @@ are set.
 
 Administration currently is mostly based on writing raw
 MongoDB objects via a web admin interface based on a [swan-admin](https://npmjs.com/package/swan-admin) instance.
+
+![image](http://i.imgur.com/8rwkghc.png)
+
 
 ## Admin Interface 
 
