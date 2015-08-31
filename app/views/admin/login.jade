@@ -1,19 +1,19 @@
 extends layout
 
 prepend title
-  | Login &mdash;
+  | #{__('Login &mdash;')}
 
 block content
-  h1 Login
-  p Please enter your crendetials below.
+  h1 #{__('Login')}
+  p #{__('Please enter your crendetials below.')}
 
   form(method='post', role='form').form-horizontal.model-form
     .form-group
-      label.control-label.col-sm-2 Username
+      label.control-label.col-sm-2 #{__('Username')}
       .col-sm-10
         input(type='text', name='username').form-control
     .form-group
-      label.control-label.col-sm-2 Password
+      label.control-label.col-sm-2 #{__('Password')}
       .col-sm-10
         input(type='password', name='password').form-control
-    button(type='submit').btn.btn-primary Login
+    button(type='submit').btn.btn-primary #{__('Login')}
