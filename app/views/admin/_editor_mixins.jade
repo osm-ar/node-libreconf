@@ -60,6 +60,6 @@ mixin editor(field, value, editor)
       +editor_datetime(field, value)
     default
       em
-        | No editor matching 
+        #{__('No editor matching')}
         strong= editor
         | .

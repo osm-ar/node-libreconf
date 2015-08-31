@@ -8,6 +8,8 @@ var config = {
     theme: 'foss4g-ba-2016',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
     locales_path: './locales',
+    default_locale: 'es',
+    locale_cookie: '_lang_',
     app: {
       name: 'node-libreconf'
     },
@@ -25,6 +27,8 @@ var config = {
     theme: 'default',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
     locales_path: './locales',
+    default_locale: 'es',
+    locale_cookie: '_lang_',
     app: {
       name: 'node-libreconf'
     },
@@ -42,6 +46,8 @@ var config = {
     theme: 'default',
     locales: ["en", "es", "fr", "de", "ja", "pt"],
     locales_path: './locales',
+    default_locale: 'es',
+    locale_cookie: '_lang_',
     app: {
       name: 'node-libreconf'
     },

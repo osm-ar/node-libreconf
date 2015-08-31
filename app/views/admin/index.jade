@@ -1,29 +1,26 @@
 extends layout
 
 prepend title
-	| Home &mdash;
+	| #{__('Home &mdash;')}
 
 block content
-	h1 Home
+	h1 #{__('Home')}
 	p
-		| Welcome to Swan Admin! Navigate through your models using the 
-		span.hidden-xs sidebar on your right
-		span.hidden-sm.hidden-md.hidden-lg menu at the bottom
-		| .
 
-	h2 Database statistics
+
+	h2.success #{__('Database statistics')}
 	dl.dl-horizontal
-		dt Database Name
+		dt #{__('Database Name')}
 		dd= stats.db
-		dt # of Collections
+		dt #{__('# of Collections')}
 		dd= stats.collections
-		dt # of Documents
+		dt #{__('# of Documents')}
 		dd= stats.objects
-		dt Average Document Size
+		dt #{__('Average Document Size')}
 		dd #{stats.avgObjSize} kB
-		dt Databse Size
+		dt #{__('Databse Size')}
 		dd #{stats.dataSize} kB
-		dt Storage Size
+		dt #{__('Storage Size')}
 		dd #{stats.storageSize} kB
-		dt Database File Size
+		dt #{__('Database File Size')}
 		dd #{stats.fileSize} kB

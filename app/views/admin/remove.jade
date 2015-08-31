@@ -1,18 +1,18 @@
 extends layout
 
 prepend title
-  | Removing #{model.name}: #{model.toString(instance)} &mdash;
+  | #{__('Removing')} #{model.name}: #{model.toString(instance)} &mdash;
 
 block content
-  h1 Removing #{model.name}: #{model.toString(instance)}
-  p ID: #{instance.id}.
+  h1 #{__('Removing')} #{model.name}: #{model.toString(instance)}
+  p #{__('ID')}: #{instance.id}.
 
   form(method='post', role='form').model-form
     p
-      | This will permanently delete the selected #{model.name}. 
-      strong This is irreversible.
-      |  Are you sure you want to proceed?
+      | #{__('This will permanently delete the selected')} #{model.name}. 
+      strong #{__('This is irreversible.')}
+      |  #{__('Are you sure you want to proceed?')}
     input(type='hidden', name='confirm', value='remove')
-    button(type='submit').btn.btn-danger Remove #{model.name} forever
+    button(type='submit').btn.btn-danger #{__('Remove')} #{model.name} #{__('forever')}
 
   //- p= instance

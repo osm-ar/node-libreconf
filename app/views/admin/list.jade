@@ -7,15 +7,15 @@ block content
   h1 All #{model.pluralName}
   div.pull-right
     +makeLink(model, null, extras='/create')
-      span.btn.btn-primary.btn-xs Create a new #{model.name}
-  p Found #{instances.length} instances.
+      span.btn.btn-primary.btn-xs #{__('Create a new')} #{model.name}
+  p #{__('Found')} #{instances.length} #{__('instances')}.
 
   table.table.table-striped.table-hover.model-table
     thead
       tr
-        th.id ID
+        th.id #{__('ID')}
         th.model-description.model-name #{model.name}
-        th.actions Actions
+        th.actions #{__('Actions')}
     tbody
       each instance in instances
         tr
@@ -25,7 +25,7 @@ block content
             +makeLink(model, instance)= model.toString(instance)
           td.actions
             +makeLink(model, instance)
-              span.btn.btn-warning.btn-xs Edit
+              span.btn.btn-warning.btn-xs #{__('Edit')}
             |  
             +makeLink(model, instance, extras='/remove')
-              span.btn.btn-danger.btn-xs Remove
+              span.btn.btn-danger.btn-xs #{__('Remove')}
