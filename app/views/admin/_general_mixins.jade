@@ -17,13 +17,13 @@ mixin makeLink(model, instance, extras)
 
 mixin sidebar(models)
   nav.sidebar
+  if authenticated
     h2 #{__('Administration')}
     ul.nav.nav-pills.nav-stacked
       li(class=currentPage == 'home' ? 'active' : undefined)
         +makeLink() #{__('Home')}
-      if authenticated
         li
-          +makeLink('/logout') Logout
+          +makeLink('/logout') #{__('Logout')}
           
     if authenticated
       hr
@@ -31,5 +31,5 @@ mixin sidebar(models)
       ul.nav.nav-pills.nav-stacked
         each model in models
           li.model-name(class=currentPage == 'model-#{model.pluralName}' ? 'active' : undefined)
-            +makeLink(model)= model.pluralName
+            +makeLink(model)= __(model.pluralName)
 

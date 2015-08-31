@@ -1,20 +1,20 @@
 extends layout
 
 prepend title
-  | All #{model.pluralName} &mdash;
+  | #{__(model.pluralName)} &mdash;
 
 block content
-  h1 All #{model.pluralName}
+  h1 #{__('All ' + model.pluralName)}
   div.pull-right
     +makeLink(model, null, extras='/create')
-      span.btn.btn-primary.btn-xs #{__('Create a new')} #{model.name}
+      span.btn.btn-primary.btn-xs #{__('Create a new')} #{__(model.name)}
   p #{__('Found')} #{instances.length} #{__('instances')}.
 
   table.table.table-striped.table-hover.model-table
     thead
       tr
         th.id #{__('ID')}
-        th.model-description.model-name #{model.name}
+        th.model-description.model-name #{__(model.name)}
         th.actions #{__('Actions')}
     tbody
       each instance in instances

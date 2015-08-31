@@ -3,7 +3,7 @@ extends layout
 include _editor_mixins.jade
 
 prepend title
-  | #{__('Editing')} #{model.name}: #{model.toString(instance)} &mdash;
+  | #{__('Editing')} #{__(model.name)}: #{model.toString(instance)} &mdash;
 
 block content
   h1 #{__('Editing')} #{model.name}: #{model.toString(instance)}
