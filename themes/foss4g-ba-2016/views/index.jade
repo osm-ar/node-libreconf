@@ -45,8 +45,11 @@ block content
         h1.ui.inverted.header #{__(title)}
         h2 #{__(slogan)}
           p
+          //.ui.huge.primary.button
+          //  | #{__('Registrate')}
+          //  i.right.arrow.icon
           .ui.huge.primary.button
-            | #{__('Registrate')}
+            | #{__('Más información')}
             i.right.arrow.icon
     .ui.vertical.stripe.segment
       .ui.middle.aligned.stackable.grid.container
@@ -148,11 +151,8 @@ block content
                   .header
                     h1 #{__('Comunidad')}
                   .meta
-                    span.price
-                    span.stay
                   .description
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                    !{a('comunidad')}
                 .ui.large.image.right
                   img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-1.jpg")
               
