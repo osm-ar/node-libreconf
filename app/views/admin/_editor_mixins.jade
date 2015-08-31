@@ -6,6 +6,15 @@ mixin editor_textarea(field, value)
   .col-sm-10
     textarea(name=field, rows=6).form-control= value
 
+mixin editor_select(field, value, options)
+  .col-sm-10
+    select(name=field).form-control
+      +create_select(options)
+
+mixin create_select(options)
+  each option in options
+    option(value="#{option.id}") #{option.title}
+
 mixin editor_markdown(field, value)
   .col-sm-5
     textarea(id='markdown-source-#{field}', name=field, rows=6).form-control= value
@@ -47,11 +56,15 @@ mixin editor_datetime(field, value)
         });
       });
 
-mixin editor(field, value, editor)
+mixin editor(field, value, fieldData)
+  - var editor = fieldData.editor
+  - var options = fieldData.from
   case editor
     when 'textfield'
     when 'csv'
       +editor_textfield(field, value)
+    when 'select'
+      +editor_select(field, value, options)
     when 'textarea'
       +editor_textarea(field, value)
     when 'markdown'

@@ -12,6 +12,6 @@ block content
     each fieldData, fieldName in model.fields
       .form-group
         label.control-label.col-sm-2 #{__(fieldName)}
-        +editor(fieldName, newInstance[fieldName], fieldData.editor)
+        +editor(fieldName, newInstance[fieldName], fieldData)
     button(type='submit').btn.btn-success #{__('Save new')} #{__(model.name)}
 
