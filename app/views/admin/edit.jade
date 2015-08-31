@@ -6,7 +6,7 @@ prepend title
   | #{__('Editing')} #{__(model.name)}: #{model.toString(instance)} &mdash;
 
 block content
-  h1 #{__('Editing')} #{model.name}: #{model.toString(instance)}
+  h1 #{__('Editing')} #{__(model.name)}: #{model.toString(instance)}
   p #{__('ID')}: #{instance.id}.
 
   form(method='post', role='form').form-horizontal.model-form
@@ -14,5 +14,5 @@ block content
       .form-group
         label.control-label.col-sm-2 #{__(fieldName)}
         +editor(fieldName, instance.get(fieldName) , fieldData.editor)
-    button(type='submit').btn.btn-success #{__('Save this')} #{model.name}
+    button(type='submit').btn.btn-success #{__('Save this')} #{__(model.name)}
 

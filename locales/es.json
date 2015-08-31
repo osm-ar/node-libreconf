@@ -47,8 +47,8 @@
   "Organiza": "Organiza",
   "Home": "Inicio",
   "Models": "Modelos",
-  "Creating new": "Creando nuevo",
-  "Save new": "Guardar nuevo",
+  "Creating new": "Creando",
+  "Save new": "Crear",
   "Libreconf Dashboard": "Libreconf Dashboard",
   "Home &mdash;": "Dasboard &mdash;",
   "sidebar on your right": "menu a la derecha",
@@ -127,5 +127,10 @@
   "country": "país",
   "gender": "sexo",
   "tshirt_size": "Tamaño de remera/polera",
-  "Invalid credentials": "Credenciales inválidas"
+  "Invalid credentials": "Credenciales inválidas",
+  "Removing": "Eliminando",
+  "This will permanently delete the selected": "Se eliminará permanentemente ",
+  "This is irreversible.": "Esto es irreversible.",
+  "Are you sure you want to proceed?": "Cuidado!",
+  "forever": "para siempre"
 }
