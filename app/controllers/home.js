@@ -29,9 +29,23 @@ router.get('/', function (req, res, next) {
               if (err) return next(err);
               SponsorType.find(function (err, sponsor_types) {
                 if (err) return next(err);
+                var a = function(slug){
+                  var article, i, len;
+                  for (i = 0, len = articles.length; i < len; i++) {
+                    article = articles[i];
+                    if(article.url == slug){
+                      return article.text;
+                    }else{
+                      return '';
+                    }
+                  }
+                }
                 return res.render('index', {
                   title: configurable.title,
                   slogan: configurable.slogan,
+                  a: a,
+                  //art: a,
+                  //article: a,
                   articles: articles,
                   speakers: speakers,
                   presentations: presentations,
