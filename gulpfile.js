@@ -4,13 +4,13 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   sass = require('gulp-sass');
 
-gulp.task('sass', function () {
-  gulp.src('./lib/materialize-src/sass/*.scss')
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(gulp.dest('./public/css'))
-    .pipe(livereload());
-});
+//gulp.task('sass', function () {
+//  gulp.src('./lib/materialize-src/sass/*.scss')
+//    .pipe(plumber())
+//    .pipe(sass())
+//    .pipe(gulp.dest('./public/css'))
+//    .pipe(livereload());
+//});
 
 gulp.task('watch', function() {
   //gulp.watch('./public/css/*.scss', ['sass']);
