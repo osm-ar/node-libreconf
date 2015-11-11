@@ -1,0 +1,22 @@
+block intro
+  .ui.vertical.masthead.center.aligned.segment(style="background: #003c55;")
+    .ui.container
+      .ui.large.secondary.pointing.menu
+        a.toc.item
+          i.sidebar.icon
+        a.active.item Home
+        a.item(href='#foss4g-ar') #{__('FOSS4G')}
+        a.item(href='#when') #{__('Cuándo')}
+        a.item(href='#where') #{__('Dónde')}
+        a.item(href='#register') #{__('Inscripción')}
+        a.item(href='#contact') #{__('Contacto')}
+        .right.item
+          a.ui.inverted.button
+            i.big.translate.icon 
+            |  #{__('Cambiar idioma')}
+    .ui.text.container.intro
+      img.img-responsive(src="/img/FOSS4g2016-o.png", style="max-width:500px" alt="#{__(title)}")
+      //h2 #{__(slogan)}
+      .ui.huge.primary.button
+          | #{__('Más información')}
+          i.right.arrow.icon

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  include header
+  // Page Contents
+  .pusher.inner-page
+    .ui.vertical.stripe.segment
+      .ui.middle.aligned.stackable.grid.container
+        .row
+          h1 #{__('Presentaciones')}
+        .row.ui.link.four.cards
+            each presentation in presentations
+            
+              .card.wide
+                .ui.dimmer
+                  .content
+                    .center
+                      p #{presentation.subtitle} 
+                .image
+                  img.ui.image.fluid.presentation(src="#{presentation.speaker.avatar}")
+                .content
+                  .header #{presentation.speaker.firstname} #{presentation.speaker.lastname} 
+                  .meta
+                    a #{presentation.speaker.firstname} #{presentation.speaker.lastname} 
+                    a @#{presentation.speaker.twitter} 
+                  .description
+                    | #{presentation.text} 
+                .extra.content
+                  span.right.floated
+                    | #{presentation.speaker.country}
+                  span#presentation #{presentation.speaker.organization}
+    include footer

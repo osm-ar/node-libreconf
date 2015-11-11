@@ -5,7 +5,6 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
     title= title
     block css
-      link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
       link(href="semantic-ui/semantic.css", type="text/css", rel="stylesheet", media="screen,projection")
       link(href="css/style.css", type="text/css", rel="stylesheet", media="screen,projection")
       link(rel="stylesheet", href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css")
@@ -109,9 +108,14 @@ html(lang="en")
           onBottomPassedReverse: function() {
             $('.fixed.menu').transition('fade out');}
         });
+        $('.pusher.inner-page').visibility({
+          once: false,
+          onOnScreen: function() {
+            $('.fixed.menu').transition('fade in');
+          }
+        });
         // create sidebar and attach to menu open
         $('.ui.sidebar').sidebar('attach events', '.toc.item');
       });
-
   body
     block content

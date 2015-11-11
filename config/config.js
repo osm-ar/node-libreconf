@@ -13,7 +13,7 @@ var config = {
     app: {
       name: 'node-libreconf'
     },
-    port: 3000,
+    port: 3005,
     db: 'mongodb://localhost/node-libreconf-development',
     credentials: {
       username: 'geoinquietos',
