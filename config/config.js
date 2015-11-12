@@ -14,8 +14,7 @@ var config = {
       name: 'node-libreconf'
     },
     port: process.env.PORT || 3000,
-    db: process.env.MONGODB_URI ||
-      'mongodb://localhost/node-libreconf-development',
+    db: 'mongodb://localhost/node-libreconf-development',
     credentials: {
       username: 'geoinquietos',
       password: 'libreconf'
@@ -34,7 +33,7 @@ var config = {
       name: 'node-libreconf'
     },
     port: process.env.PORT || 3000,
-    db: process.env.MONGODB_URI || 'mongodb://localhost/node-libreconf-test',
+    db: 'mongodb://localhost/node-libreconf-test',
     credentials: {
       username: 'geoinquietos',
       password: 'libreconf'
@@ -53,8 +52,7 @@ var config = {
       name: 'node-libreconf'
     },
     port: process.env.PORT || 3000,
-    db: process.env.MONGODB_URI ||
-      'mongodb://localhost/node-libreconf-production',
+    db: 'mongodb://localhost/node-libreconf-production',
     credentials: {
       username: 'geoinquietos',
       password: 'libreconf'
