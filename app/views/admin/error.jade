@@ -2,5 +2,7 @@ extends layout
 
 block content
   h1= __(message)
-  h2= __(error.status)
-  pre #{error.stack}
+  if (typeof error != 'undefined') 
+    div=JSON.stringify(error)
+    h2= __(error.status != undefined ? error.status: '')
+    pre #{ error.stack != undefined ? error.stack: ''}
