@@ -46,11 +46,11 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @blue;
-@secondaryColor      : @black;
+@primaryColor        : #1b557a;
+@secondaryColor      : #afd6e7;
 
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightBlack;
+@lightPrimaryColor   : #8bd8f7;
+@lightSecondaryColor : gold;
 
 /*--------------
   Page Heading
@@ -101,7 +101,7 @@
         Page
 --------------------*/
 
-@pageBackground      : #FFFFFF;
+@pageBackground      : @white;
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.4285em;
@@ -128,7 +128,7 @@
 --------------------*/
 
 @highlightBackground      : #CCE2FF;
-@highlightColor           : @textColor;
+@highlightColor           : @lightPrimaryColor;
 
 @inputHighlightBackground : rgba(100, 100, 100, 0.4);
 @inputHighlightColor      : @textColor;

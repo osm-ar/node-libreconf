@@ -1,56 +1,15 @@
 extends layout
 
 block content
-  // Following Menu
-  .ui.large.top.fixed.hidden.menu
-    .ui.container
-      a.active.item Home
-      a.item(href='#') #{__('FOSS4G')}
-      a.item(href='#') #{__('Cuándo')}
-      a.item(href='#') #{__('Dónde')}
-      a.item(href='#') #{__('Inscripción')}
-      a.item(href='#') #{__('Contacto')}
-      .right.menu
-        .item
-          a.ui.button Log in
-        .item
-          a.ui.primary.button Sign Up
-  // Sidebar Menu
-  .ui.vertical.inverted.sidebar.menu
-    a.active.item Home
-    a.item(href='#foss4g-ar') #{__('FOSS4G')}
-    a.item(href='#when') #{__('Cuándo')}
-    a.item(href='#where') #{__('Dónde')}
-    a.item(href='#register') #{__('Inscripción')}
-    a.item(href='#contact') #{__('Contacto')}
-
+  include header
+  include intro
   // Page Contents
+  
   .pusher
-    .ui.inverted.vertical.masthead.center.aligned.segment(style="background-image: url(/img/bg-1.png)")
-      .ui.container
-        .ui.large.secondary.inverted.pointing.menu
-          a.toc.item
-            i.sidebar.icon
-          a.active.item Home
-          a.item(href='#foss4g-ar') #{__('FOSS4G')}
-          a.item(href='#when') #{__('Cuándo')}
-          a.item(href='#where') #{__('Dónde')}
-          a.item(href='#register') #{__('Inscripción')}
-          a.item(href='#contact') #{__('Contacto')}
-          .right.item
-            a.ui.inverted.button
-              i.big.translate.icon 
-              |  #{__('Cambiar idioma')}
-      .ui.text.container
-        h1.ui.inverted.header #{__(title)}
-        h2 #{__(slogan)}
-          p
-          //.ui.huge.primary.button
-          //  | #{__('Registrate')}
-          //  i.right.arrow.icon
-          .ui.huge.primary.button
-            | #{__('Más información')}
-            i.right.arrow.icon
+    
+    .ui.vertical.stripe.segment
+      .ui.middle.aligned.stackable.grid.container
+        .row !{a('foss4g-ar')}
     .ui.vertical.stripe.segment
       .ui.middle.aligned.stackable.grid.container
         .row
@@ -80,7 +39,7 @@ block content
           .center.aligned.column
             a.ui.huge.button(href="#cfp") #{__('Postulate como disertante')}
 
-    .ui.vertical.inverted.stripe.segment#inscripcion
+    .ui.vertical.inverted.stripe.segment#register
       .ui.container
         .row
           .ui.inverted.icon.message
@@ -103,8 +62,7 @@ block content
       .ui.container
         .row
           div#donde
-            h1 #{__('Dónde?')}
-            h2 #{__('En XXXXXXXXXXXXXXXXXX, Buenos Aires, Argentina.')}
+            div !{a('donde')}
             #map
             script.
               var map = L.map('map',{scrollWheelZoom: false}).setView([-34.57198,-58.44017],17);
@@ -127,11 +85,7 @@ block content
                   .meta
                     span.price
                     span.stay
-                  .description
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                  .description !{a('talleres')}
                 .ui.medium.image
                   img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-3.jpg")
               .item
@@ -143,67 +97,13 @@ block content
                   .meta
                     span.price
                     span.stay
-                  .description
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
-                    img.ui.wireframe.image(style="margin:15px;", src="/img/wireframe-paragraph.png")
+                  .description !{a('presentaciones')}
               .item
                 .content
                   .header
                     h1 #{__('Comunidad')}
                   .meta
-                  .description
-                    !{a('comunidad')}
+                  .description !{a('comunidad')}
                 .ui.large.image.right
                   img.foss4g2013.ui.fluid.circular.image(src="/img/foss4gba-1.jpg")
-              
-
-    .ui.vertical.stripe.segment
-      .ui.container
-        .row
-          h1 #{__('Sponsors')}
-          .ui.grid
-            each sponsor in sponsors
-              .ui.four.wide.column
-                a.ui.wide(href=sponsor.url)
-                  img(src=sponsor.ad_url)
-    .ui.vertical.stripe.segment
-      .ui.text.container
-        each article in articles
-          h3.ui.header #{article.title}
-          !{article.text}
-          //a.ui.large.button #{__('Leer más')]
-          h4.ui.horizontal.header.divider
-            a(href='#') -
-    .ui.notinverted.vertical.footer.segment
-      .ui.container
-        .ui.stackable.notinverted.divided.equal.height.stackable.grid
-          .three.wide.column
-            h4.ui.notinverted.header About
-            .ui.notinverted.link.list
-              a.item(href='#foss4g-ar') #{__('FOSS4G')}
-              a.item(href='#when') #{__('Cuándo')}
-              a.item(href='#where') #{__('Dónde')}
-              a.item(href='#register') #{__('Inscripción')}
-              a.item(href='#contact') #{__('Contacto')}
-          .three.wide.column
-            h4.ui.notinverted.header #{__('Presentaciones:')}
-            .ui.notinverted.link.list
-              a.item(href='#cfp') #{__('Convocatoria')}
-              a.item(href='#terms') #{__('Términos')}
-              a.item(href='#topics') #{__('Temas')}
-              a.item(href='#programme') #{__('Grilla/Horarios')}
-          .three.wide.column
-            h4.ui.notinverted.header #{__('Hecho con')}
-            .ui.notinverted.link.list
-              a.item(href='https://github.com/osm-ar/node-libreconf') #{__('libreconf')}
-            h4.ui.notinverted.header #{__('por')}
-            .ui.notinverted.link.list
-              a.item(href='#') #{__('geoinquietos')}
-              a.item(href='https://github.com/osm-ar') #{__('osm-ar')}
-          .four.wide.column
-            h4.ui.notinverted.header #{__('Organiza')]
-            img.ui.image(src="/img/geoinquietos-isologo-blanco.png")
-  script.
-    $('img.speaker').dimmer({on: 'hover'});
-    $('.image.foss4g2013').hover(function(){$(this).transition('stop').transition('pulse');});
-      
+    include footer

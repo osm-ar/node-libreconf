@@ -1,0 +1,54 @@
+block footer
+
+
+  .ui.vertical.stripe.segment#sponsors
+    .ui.container
+      .row
+        h1 #{__('Sponsors')}
+        .ui.grid
+          each sponsor in sponsors
+            .ui.four.wide.column
+              a.ui.wide(href=sponsor.url)
+                img(src=sponsor.ad_url)
+  //.ui.vertical.stripe.segment
+  //  .ui.text.container
+  //    each article in articles
+  //      h3.ui.header #{article.title}
+  //      !{article.text}
+  //      //a.ui.large.button #{__('Leer más')]
+  //      h4.ui.horizontal.header.divider
+  //        a(href='#') -
+  .ui.notinverted.vertical.footer.segment
+    .ui.container
+      .ui.stackable.notinverted.divided.equal.height.stackable.grid
+        .three.wide.column
+          h4.ui.notinverted.header About
+          .ui.notinverted.link.list
+            a.item(href='#foss4g-ar') #{__('FOSS4G')}
+            a.item(href='#when') #{__('Cuándo')}
+            a.item(href='#where') #{__('Dónde')}
+            a.item(href='#register') #{__('Inscripción')}
+            a.item(href='#contact') #{__('Contacto')}
+        .three.wide.column
+          h4.ui.notinverted.header #{__('Presentaciones:')}
+          .ui.notinverted.link.list
+            a.item(href='#cfp') #{__('Convocatoria')}
+            a.item(href='#terms') #{__('Términos')}
+            a.item(href='#topics') #{__('Temas')}
+            a.item(href='#programme') #{__('Grilla/Horarios')}
+        .three.wide.column
+          h4.ui.notinverted.header #{__('Hecho con')}
+          .ui.notinverted.link.list
+            a.item(href='https://github.com/osm-ar/node-libreconf') #{__('libreconf')}
+          h4.ui.notinverted.header #{__('por')}
+          .ui.notinverted.link.list
+            a.item(href='#') #{__('geoinquietos')}
+            a.item(href='https://github.com/osm-ar') #{__('osm-ar')}
+        .four.wide.column
+          h4.ui.notinverted.header #{__('Organiza')]
+          img.ui.image(src="/img/geoinquietos-isologo-blanco.png")
+          img.ui.image(src="/img/FOSS4g2016-o.png")
+  script.
+    $('img.speaker').dimmer({on: 'hover'});
+    $('.image.foss4g2013').hover(function(){$(this).transition('stop').transition('pulse');});
+    
