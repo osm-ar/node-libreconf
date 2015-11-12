@@ -1,6 +1,6 @@
 var path = require('path'),
-    rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+  rootPath = path.normalize(__dirname + '/..'),
+  env = process.env.NODE_ENV || 'development';
 
 var config = {
   development: {
@@ -13,8 +13,9 @@ var config = {
     app: {
       name: 'node-libreconf'
     },
-    port: 3000,
-    db: process.env.MONGODB_URI || 'mongodb://localhost/node-libreconf-development',
+    port: process.env.PORT || 3000,
+    db: process.env.MONGODB_URI ||
+      'mongodb://localhost/node-libreconf-development',
     credentials: {
       username: 'geoinquietos',
       password: 'libreconf'
@@ -32,7 +33,7 @@ var config = {
     app: {
       name: 'node-libreconf'
     },
-    port: 3000,
+    port: process.env.PORT || 3000,
     db: process.env.MONGODB_URI || 'mongodb://localhost/node-libreconf-test',
     credentials: {
       username: 'geoinquietos',
@@ -51,8 +52,9 @@ var config = {
     app: {
       name: 'node-libreconf'
     },
-    port: 3000,
-    db: process.env.MONGODB_URI || 'mongodb://localhost/node-libreconf-production',
+    port: process.env.PORT || 3000,
+    db: process.env.MONGODB_URI ||
+      'mongodb://localhost/node-libreconf-production',
     credentials: {
       username: 'geoinquietos',
       password: 'libreconf'
