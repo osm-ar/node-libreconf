@@ -1,57 +1,10 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: #26a69a;
-}
-
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
+.intro{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0d2c3a+0,164060+94&amp;0.9+0,0+47 */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(13,44,58,0.9) 0%, rgba(18,54,77,0) 47%, rgba(22,64,96,0) 94%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(13,44,58,0.9)), color-stop(47%,rgba(18,54,77,0)), color-stop(94%,rgba(22,64,96,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(13,44,58,0.9) 0%,rgba(18,54,77,0) 47%,rgba(22,64,96,0) 94%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(13,44,58,0.9) 0%,rgba(18,54,77,0) 47%,rgba(22,64,96,0) 94%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(13,44,58,0.9) 0%,rgba(18,54,77,0) 47%,rgba(22,64,96,0) 94%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(13,44,58,0.9) 0%,rgba(18,54,77,0) 47%,rgba(22,64,96,0) 94%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e60d2c3a', endColorstr='#00164060',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }

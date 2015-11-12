@@ -13,7 +13,7 @@ var config = {
     app: {
       name: 'node-libreconf'
     },
-    port: process.env.PORT || 3000,
+    port: 3005,
     db: 'mongodb://localhost/node-libreconf-development',
     credentials: {
       username: 'geoinquietos',
@@ -32,7 +32,7 @@ var config = {
     app: {
       name: 'node-libreconf'
     },
-    port: process.env.PORT || 3000,
+    port: 3000,
     db: 'mongodb://localhost/node-libreconf-test',
     credentials: {
       username: 'geoinquietos',
@@ -51,7 +51,7 @@ var config = {
     app: {
       name: 'node-libreconf'
     },
-    port: process.env.PORT || 3000,
+    port: 3000,
     db: 'mongodb://localhost/node-libreconf-production',
     credentials: {
       username: 'geoinquietos',

@@ -1,0 +1,23 @@
+block header
+  // Following Menu
+  .ui.large.top.fixed.hidden.menu
+    .ui.container
+      a.active.item(href='/') Home
+      a.item(href='#') #{__('FOSS4G')}
+      a.item(href='#') #{__('Cuándo')}
+      a.item(href='#') #{__('Dónde')}
+      a.item(href='#') #{__('Inscripción')}
+      a.item(href='#') #{__('Contacto')}
+      .right.menu
+        .item
+          a.ui.primary.button #{__('Registrarse')}
+  // Sidebar Menu
+  .ui.vertical.inverted.sidebar.menu
+    a.item(style="background:white url(/img/iso.png) no-repeat 70px 70% ")
+      img(src="/img/FOSS4g2016-o.png", style="width:100px;")
+    a.active.item(href='/') Home
+    a.item(href='#foss4g') #{__('FOSS4G')}
+    a.item(href='#when') #{__('Cuándo')}
+    a.item(href='#where') #{__('Dónde')}
+    a.item(href='#register') #{__('Inscripción')}
+    a.item(href='#contact') #{__('Contacto')}
