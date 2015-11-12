@@ -7,6 +7,7 @@ var express = require('express'),
   Presentation = mongoose.model('Presentation'),
   PresentationType = mongoose.model('PresentationType'),
   Sponsor = mongoose.model('Sponsor'),
+  debug = require("debug")("libreconf:home"),
   SponsorType = mongoose.model('SponsorType');
 
 module.exports = function(app) {
@@ -14,20 +15,26 @@ module.exports = function(app) {
 };
 
 router.get('/', function(req, res, next) {
-
+  debug("Finding configurables on DB");
   Configurable.findOne(function(err, configurable) {
     if (err) return next(err);
+    debug("Finding articles on DB");
     Article.find(function(err, articles) {
       if (err) return next(err);
+      debug("Finding speakers on DB");
       Speaker.find(function(err, speakers) {
         if (err) return next(err);
+        debug("Finding presentations on DB");
         Presentation.find(function(err, presentations) {
           if (err) return next(err);
+          debug("Finding presentation types on DB");
           PresentationType.find(function(err,
             presentation_types) {
             if (err) return next(err);
+            debug("Finding sponsors on DB");
             Sponsor.find(function(err, sponsors) {
               if (err) return next(err);
+              debug("Finding sponsor types on DB");
               SponsorType.find(function(err,
                 sponsor_types) {
                 if (err) return next(err);
