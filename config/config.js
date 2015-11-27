@@ -16,8 +16,8 @@ var config = {
     port: 3005,
     db: 'mongodb://localhost/node-libreconf-development',
     credentials: {
-      username: 'foss4g',
-      password: 'foss4g**00'
+    username: process.env.LIBRECONF_ADMIN_USERNAME || 'geoinquietos',
+    password: process.env.LIBRECONF_ADMIN_PASSWORD || 'libreconf'
     },
     sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
   },
@@ -35,8 +35,8 @@ var config = {
     port: 3000,
     db: 'mongodb://localhost/node-libreconf-test',
     credentials: {
-      username: 'foss4g',
-      password: 'foss4g**00'
+    username: process.env.LIBRECONF_ADMIN_USERNAME || 'geoinquietos',
+    password: process.env.LIBRECONF_ADMIN_PASSWORD || 'libreconf'
     },
     sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
   },
@@ -54,8 +54,8 @@ var config = {
     port: 3000,
     db: 'mongodb://localhost/node-libreconf-production',
     credentials: {
-      username: 'foss4g',
-      password: 'foss4g**00'
+    username: process.env.LIBRECONF_ADMIN_USERNAME || 'geoinquietos',
+    password: process.env.LIBRECONF_ADMIN_PASSWORD || 'libreconf'
     },
     sessionSecret: 'a55d2ddb9d2d55d2ddb9hsa5555d255d2ddb9j2vc9'
   }
